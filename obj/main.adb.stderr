@@ -1,0 +1,2 @@
+main.adb:22:20: warning: variable "Can_Stop" is not modified in loop body [enabled by default]
+main.adb:22:20: warning: possible infinite loop [enabled by default]
