@@ -1,7 +1,6 @@
 with Ada.Text_IO;
 
-procedure Main is
-
+procedure Main is   
    Can_Stop : Boolean := False;
    pragma Atomic (Can_Stop);
    Step : Long_Long_Integer := 1;
@@ -32,16 +31,11 @@ procedure Main is
    end Sum_Thread;
 
    B1 : Stop_Thread;
-
-   T1 : Sum_Thread(1);
-   T2 : Sum_Thread(2);
-   T3 : Sum_Thread(3);
-   T4 : Sum_Thread(4);
-   T5 : Sum_Thread(5);
-   T6 : Sum_Thread(6);
-
-
-
+      
+Threads : array(1..6) of access Sum_Thread; 
 begin
-   null;
+   
+   for I in 1..6 loop
+      Threads(I) := new Sum_Thread(I);
+   end loop;
 end Main;
